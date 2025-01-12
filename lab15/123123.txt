@@ -1,0 +1,15 @@
+def read_file(file_name):
+    with open(file_name, 'rb') as file:
+        while el := file.read(4):
+            print(struct.unpack('i', el)[0], end=' ')
+
+
+def create_file(file_name):
+    arr = [random.randint(-100, 100) for _ in range(random.randint(10, 20))]
+    print('Изначальная последовательность: ', end='')
+    for el in arr:
+        print(el, end=' ')
+    print('\n')
+    with open(file_name, 'wb') as file:
+        for el in arr:
+            ыfile.write(struct.pack('i', el))
